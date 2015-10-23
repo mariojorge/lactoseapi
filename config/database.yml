@@ -15,8 +15,9 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
+  reconnect: false
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
@@ -81,7 +82,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
   database: lactoseapi_production
-  username: lactoseapi
-  password: <%= ENV['LACTOSEAPI_DATABASE_PASSWORD'] %>
+  pool: 5
+  username: mariojorge
+  password: a25fc9
+  host: localhost
