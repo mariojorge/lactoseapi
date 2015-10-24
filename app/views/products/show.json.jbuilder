@@ -14,6 +14,7 @@ json.product do
     json.id location.id
     json.title location.title
     json.address location.home_delivery ? "Entrega em domicilio" : location.address
+    json.phone location.phone
     json.coordinate_x location.coordinate_x
     json.coordinate_y location.coordinate_y
   end
