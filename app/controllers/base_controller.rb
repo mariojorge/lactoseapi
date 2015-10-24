@@ -27,7 +27,8 @@ class BaseController < ApplicationController
       .per(page_params[:page_size])
     instance_variable_set(plural_resource_name, resources)
     respond_to do |format|
-      format.json { render content_type: "text/plain" }
+      format.html { render :json => instance_variable_get(plural_resource_name) }
+      format.json { render :json => instance_variable_get(plural_resource_name) }
     end
   end
 
@@ -35,7 +36,8 @@ class BaseController < ApplicationController
   def show  
     #respond_with get_resource
     respond_to do |format|
-      format.json { render content_type: "text/plain" }
+      format.html { render :json => get_resource }
+      format.json { render :json => get_resource }
     end
   end
 
