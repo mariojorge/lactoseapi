@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024140740) do
+ActiveRecord::Schema.define(version: 20151024141711) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -36,13 +36,17 @@ ActiveRecord::Schema.define(version: 20151024140740) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.integer  "category_id",  limit: 4
-    t.decimal  "middle_price",             precision: 10
+    t.string   "title",                      limit: 255
+    t.integer  "category_id",                limit: 4
+    t.decimal  "middle_price",                           precision: 10
     t.boolean  "lac_free"
     t.boolean  "gluten_free"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.string   "product_image_file_name",    limit: 255
+    t.string   "product_image_content_type", limit: 255
+    t.integer  "product_image_file_size",    limit: 4
+    t.datetime "product_image_updated_at"
   end
 
 end

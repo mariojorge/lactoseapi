@@ -27,6 +27,8 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'rails_admin'
 
+gem "paperclip", "~> 4.3"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

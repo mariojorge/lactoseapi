@@ -3,6 +3,7 @@ json.product do
   json.title @product.title
   json.middle_price @product.middle_price
   json.created_at @product.created_at
+  json.image_url @product.product_image.url
 
   json.category do
     json.id    @product.category.id
