@@ -12,8 +12,7 @@ json.product do
   json.locations @product.locations do |location|  
     json.id location.id
     json.title location.title
-    json.address location.address
-    json.home_delivery location.home_delivery
+    json.address location.home_delivery ? location.address : "Entrega em domicilio"
     json.coordinate_x location.coordinate_x
     json.coordinate_y location.coordinate_y
   end
